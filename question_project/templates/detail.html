@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}详情{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/detail.css') }}">
+{% endblock %}
+
+{% block main %}
+<div>
+    <div class="title">
+        <h3>{{ question.title }}</h3>
+    </div>
+    <div class="info">
+        <p>作者:{{ question.author.username }}  时间：{{ question.create_time }}</p>
+    </div>
+    <hr>
+    <div class="content">
+        <p>{{ question.detail }}</p>
+    </div>
+    <hr>
+    <div class="buttom">
+        <div><p>评论（{{ answers_num }}）</p></div>
+        <div class="comment">
+            <form action="/detail/answer/" method="post">
+
+                <textarea class="form-control" rows="3" name="content" placeholder="留下您的评论吧"></textarea>
+
+                <input type="hidden" name="question_id" value="{{ question.id }}">
+                <button type="submit" class="btn btn-primary">发表评论</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+
+
+    <div class="comment-list">
+        <ul>
+            {% for answer in answers %}
+            <li>
+            <div class="container-img">
+                <img class="img" src="{{ url_for('static',filename=answer.author.icon) }}">
+            </div>
+            <div class="container-content">
+                <div class="container-name">
+                    <b>{{ answer.author.username }}</b>
+                </div>
+                <div class="container-comment">
+                    <p>{{ answer.content }}</p>
+                </div>
+            </div>
+            <div class="container-time">
+                <p>{{ answer.answer_time }}</p>
+            </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

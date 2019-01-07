@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}个人中心{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/personal.css') }}">
+{% endblock %}
+
+{% block main %}
+<div>
+    <div class="container-icon">
+        <a href="/change_data/"><img class="icon" src="{{ url_for('static',filename=user.icon) }}" alt="icon"></a>
+    </div>
+    <div class="username">
+        <h3>{{ user.username }}</h3>
+    </div>
+</div>
+{% endblock %}

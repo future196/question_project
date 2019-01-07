@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}登录需要{% endblock %}
+{% block main %}
+<div style="text-align:center;margin:20px;">
+<p>您还没有登录呢，先登录才可以进行发布问答，评论等功能哦!</p>
+<a href="{{ url_for('login') }}"><p>点击马上登录</p></a>
+</div>
+{% endblock %}

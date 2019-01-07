@@ -1,0 +1,39 @@
+ul{
+list-style:none;
+padding-left:0px;
+}
+
+li{
+border-bottom:1px solid #eee;
+overflow:hidden;
+}
+
+.title_img{
+width:40px;
+height:100%;
+float:left;
+margin:10px;
+}
+
+.title_img .img{
+width:40px;
+height:40px
+}
+
+.question_title{
+width:650px;
+float:left;
+}
+
+.question_info{
+float:right;
+}
+
+.question_info .question_time{
+margin-left:20px;
+}
+
+
+.bottom{
+text-align:center;
+}

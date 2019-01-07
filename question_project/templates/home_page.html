@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}首页{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_page.css') }}">
+{% endblock %}
+
+{% block main %}
+{% if questions %}
+<ul>
+    {% for question in questions %}
+    <li>
+        <div class="title_img">
+            <img class="img" src="{{ url_for('static',filename=question.author.icon) }}" alt="img" >
+        </div>
+        <div class="question_title">
+            <a href="{{ url_for('detail', question_id=question.id) }}"><h4>{{ question.title }}</h4></a>
+            <p>{{ question.detail }}</p>
+            <div class="question_info">
+                <span class="question_author">{{ question.author.username }}</span>
+                <span class="question_time">{{ question.create_time }}</span>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+
+
+</ul>
+<p class="bottom">- - - - - 我是有底线的人 - - - - -</p>
+{% else %}
+<div style="margin:20px;text-align:center">
+    <p>还没有问答呢，赶紧来发个问答吧。</p>
+    <a href="/question/">点我发布问答</a>
+</div>
+{% endif %}
+{% endblock %}

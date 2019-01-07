@@ -1,0 +1,67 @@
+.title{
+text-align:center;
+}
+
+.info{
+text-align:center;
+}
+
+.content{
+text-align:center;
+padding:20px 20px;
+}
+
+.comment{
+
+}
+
+.comment .form-control{
+width:660px;
+margin:0px 0px 5px 0px;
+}
+
+.buttom{
+padding:20px 20px;
+}
+
+.container-img{
+width:40px;
+height:100%;
+float:left;
+margin-left:10px;
+margin-right:10px;
+}
+
+.container-content{
+float:left;
+}
+
+.img{
+width:40px;
+height:40px;
+}
+
+.container-name{
+margin-top:5px;
+margin-bottom:5px;
+color:blue;
+}
+
+.container-comment{
+
+}
+
+.container-time{
+float:right;
+margin-right:10px;
+}
+
+ul{
+list-style:none;
+padding-left:0px;
+}
+
+li{
+border-bottom:1px solid #eee;
+overflow:hidden;
+}
